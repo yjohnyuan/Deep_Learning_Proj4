@@ -45,5 +45,5 @@ end
 
 Dtimes=char(datetime('now','TimeZone','local','Format','d-MMM-y HH:mm:ss Z'));
 disp(['End Time:  ' Dtimes] );
-disp(matplot)
+%disp(matplot)
 model.param = param;
