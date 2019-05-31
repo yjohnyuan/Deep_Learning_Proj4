@@ -1,30 +1,30 @@
-function model = cnn_train(y, Z, config_file, options, seed)
+function model = cnn_train(y, Z, config_file, options, seed, datapath, datapath_t, d, a, b)
 
-if nargin == 3 || nargin == 4
-	if nargin == 3
-		options = '';
-	end
-	if exist('OCTAVE_VERSION', 'builtin')
-		rand('state');
-		randn('state');
-	else
-		rng('shuffle');
-	end
-elseif nargin == 5
-	if exist('OCTAVE_VERSION', 'builtin')
-		rand('state', seed);
-		randn('state', seed);
-	else
-		rng(seed);
-	end
-else
-	error('The #arguments is incorrect.');
-end
+% if nargin == 3 || nargin == 4
+% 	if nargin == 3
+% 		options = '';
+% 	end
+% 	if exist('OCTAVE_VERSION', 'builtin')
+% 		rand('state');
+% 		randn('state');
+% 	else
+% 		rng('shuffle');
+% 	end
+% elseif nargin == 5
+% 	if exist('OCTAVE_VERSION', 'builtin')
+% 		rand('state', seed);
+% 		randn('state', seed);
+% 	else
+% 		rng(seed);
+% 	end
+% else
+% 	error('The #arguments is incorrect.');
+% end
 addpath(genpath('./cnn'), genpath('./opt'));
 
 param = parameter(y, Z, config_file, options);
 prob = check_data(y, Z, param);
-model = train(prob, param);
+model = train(prob, param, datapath, datapath_t, d, a, b);
 
 function param = parameter(y, Z, config_file, options)
 

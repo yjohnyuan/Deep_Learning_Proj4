@@ -1,4 +1,4 @@
-function model = sgd(prob, param, model, net, datapath, datapath_t, d, a, b)
+function model = sgd(prob, param, model, net)
 
 lr = param.lr;
 batch_size = param.bsize;
@@ -10,27 +10,7 @@ v(:) = {0};
 step = 1;
 matplot = zeros (500,1);
 
-% Read test data sets-------------------
-load(datapath_t,'y','Z');
-y = y - min(y) + 1;
-Z = [full(Z) zeros(size(Z,1), a*b*d - size(Z,2))];
-
-% Rearrange data from row-wise to col-wise
-Z = reshape(permute(reshape(Z, [],b,a,d), [1,3,2,4]), [], a*b*d);
-
-% Max-min normalization
-tmp_max = max(Z, [], 2);
-tmp_min = min(Z, [], 2);
-Z = (Z - tmp_min) ./ (tmp_max - tmp_min);
-
-% Zero mean
-mean_tr = mean(Z);
-Z = Z - mean_tr;
-%---------------------------------------
-
 for k = 1 : param.epoch_max
-    
-    fprintf('hello');
 
     Dtimes=char(datetime('now','TimeZone','local','Format','HH:mm:ss Z'));
     disp([' Starting Epoch ' Dtimes] );
@@ -62,13 +42,10 @@ for k = 1 : param.epoch_max
     matplot(k)=loss/batch_size;
     %disp(matplot)
     
-    model.param = param;    
-    [predicted_label, acc] = cnn_predict(y, Z, model);
-    %fprintf('Seed Number: %g\n', seed);
-    fprintf('test_acc: %g\n',acc);
+    
 end
 
 Dtimes=char(datetime('now','TimeZone','local','Format','d-MMM-y HH:mm:ss Z'));
 disp(['End Time:  ' Dtimes] );
-%disp(matplot)
+disp(matplot)
 model.param = param;
