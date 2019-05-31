@@ -1,0 +1,131 @@
+CIFAR10- Commands SGD
+LR= 0.1
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 1 -C 0.01 -lr 0.1 -decay 0 -bsize 128 -momentum 0.9',10)
+
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 10 -C 0.01 -lr 0.1 -decay 0 -bsize 128 -momentum 0.9',10)
+
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 20 -C 0.01 -lr 0.1 -decay 0 -bsize 128 -momentum 0.9',10)
+
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 30 -C 0.01 -lr 0.1 -decay 0 -bsize 128 -momentum 0.9',10)
+
+CIFAR10- Commands  SGD
+LR= 0.01
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 1 -C 0.01 -lr 0.01 -decay 0 -bsize 128 -momentum 0.9',10)
+
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 10 -C 0.01 -lr 0.01 -decay 0 -bsize 128 -momentum 0.9',10)
+
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 20 -C 0.01 -lr 0.01 -decay 0 -bsize 128 -momentum 0.9',10)
+
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 30 -C 0.01 -lr 0.01 -decay 0 -bsize 128 -momentum 0.9',10)
+
+CIFAR10- Commands  SGD 
+LR= 0.001
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 10 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 20 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 30 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+
+CIFAR10- Commands  SGD 
+LR= 0.0001
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 1 -C 0.01 -lr 0.0001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 10 -C 0.01 -lr 0.0001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 20 -C 0.01 -lr 0.0001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 30 -C 0.01 -lr 0.0001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+
+
+MNIST Commands  SGD
+LR= 0.1
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+MNIST Commands  SGD
+LR= 0.01
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+MNIST Commands  SGD
+LR= 0.001
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+
+MNIST Commands  SGD
+LR= 0.0001
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+
+
+
+
+
+-------
+------
+-------
+--------------------
+------
+-------
+--------------------
+------
+-------
+--------------------
+------
+-------
+--------------------
+------
+-------
+-------------
+
+-------
+------
+-------
+-------------
+----------------NEWton Script Time
+
+
+
+
+CIFAR10- Commands Newton
+LR= 0.1
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 1 -C 0.01 -lr 0.1 -decay 0 -bsize 128 -momentum 0.9',10)
+
+
+CIFAR10- Commands  Newton
+LR= 0.01
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 1 -C 0.01 -lr 0.01 -decay 0 -bsize 128 -momentum 0.9',10)
+
+
+CIFAR10- Commands  Newton 
+LR= 0.001
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+
+
+CIFAR10- Commands  Newton
+LR= 0.0001
+experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 1 -C 0.01 -lr 0.0001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+
+
+MNIST Commands  Newton
+LR= 0.1
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+MNIST Commands  Newton
+LR= 0.01
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+MNIST Commands  Newton
+LR= 0.001
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+MNIST Commands  Newton
+LR= 0.0001
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+
+
+
