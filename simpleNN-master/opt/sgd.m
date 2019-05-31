@@ -12,8 +12,8 @@ matplot = zeros (500,1);
 
 for k = 1 : param.epoch_max
 
-    %Dtimes=char(datetime('now','TimeZone','local','Format','HH:mm:ss Z'));
-    %disp([' Starting Epoch ' Dtimes] );
+    Dtimes=char(datetime('now','TimeZone','local','Format','HH:mm:ss Z'));
+    disp([' Starting Epoch ' Dtimes] );
     a = 0 ;
 	for j = 1 : ceil(prob.l/batch_size)
         %dt = datestr(now,'HH:MM:SS.FFF;');
@@ -24,8 +24,10 @@ for k = 1 : param.epoch_max
 		[net, loss] = lossgrad_subset(prob, param, model, net, batch_idx, 'fungrad');
 
 		for m = 1 : param.L
-			Grad = [net.dlossdW{m} net.dlossdb{m}]/batch_size;                    
-			%Grad = Grad + [model.weight{m} model.bias{m}]/param.C;
+			Grad = [net.dlossdW{m} net.dlossdb{m}]/batch_size;
+            %I put this line back from proj4 to proj 5 so the C term is
+            %activated - John
+			Grad = Grad + [model.weight{m} model.bias{m}]/param.C;
 			v{m} = param.momentum*v{m} - lr*Grad;
 			model.weight{m} = model.weight{m} + v{m}(:,1:end-1);
 			model.bias{m} = model.bias{m} + v{m}(:,end);

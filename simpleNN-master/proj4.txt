@@ -30,8 +30,23 @@ experiment('cifar10-layer3.config', 'cifar10-5000.mat', 'cifar10.t.mat', 3, 32, 
 MNIST Commands
 
 
-experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10)
 
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',20)
 
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',30)
 
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',40)
+
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',50)
+
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',60)
+
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',70)
+
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',80)
+
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',90)
+
+experiment('mnist-layer3.config', 'mnist-5000.mat', 'mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',100)
 
