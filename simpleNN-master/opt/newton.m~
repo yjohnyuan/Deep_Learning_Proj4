@@ -28,7 +28,6 @@ Z = Z - mean_tr;
 epochs = [];
 accuracies = [];
 times = [];
-unix_time = num2str(posixtime(datetime('now')) * 1e6);
 
 start_tic = tic;
 for k = 1 : param.iter_max
@@ -64,27 +63,21 @@ for k = 1 : param.iter_max
     
     
     model.param = param;    
+    [predicted_label, acc] = cnn_predict(y, Z, model);
+    fprintf('test_acc: %g\n',acc);
+    accuracies = [accuracies acc];
     
-    if mod(k,10) == 0
-        [predicted_label, acc] = cnn_predict(y, Z, model);
-        fprintf('test_acc: %g\n',acc);
-        accuracies = [accuracies acc];
-
-        epochs = [epochs k];
-
-        total_elapsed_toc = toc(start_tic);
-        times = [times total_elapsed_toc];        
-        
-        result_name = strcat('results/results_newton_cifar_0.1_',unix_time,'.mat');
-        save(result_name,'epochs','accuracies','times');
-    end    
+    epochs = [epochs k];
     
-    disp("This epoch:");
+    total_elapsed_toc = toc(start_tic);
+    times = [times total_elapsed_toc];
+    
     toc(epoch_tic);
-    disp("Total:");
-    toc(start_tic);
 end
 
+unix_time = num2str(posixtime(datetime('now')) * 1e6);
+result_name = 'results/results_newton_cifar_0.1.mat' unix_time
+save('results/results_newton_cifar_0.1.mat','epochs','accuracies','times');
 
 model.param = param;
 
