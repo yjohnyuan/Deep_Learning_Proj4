@@ -1,4 +1,4 @@
-function model = cnn_train(y, Z, config_file, options, seed, datapath, datapath_t, d, a, b)
+function model = cnn_train(y, Z, config_file, options, seed, datapath, datapath_t, d, a, b, lr)
 
 % if nargin == 3 || nargin == 4
 % 	if nargin == 3
@@ -24,7 +24,7 @@ addpath(genpath('./cnn'), genpath('./opt'));
 
 param = parameter(y, Z, config_file, options);
 prob = check_data(y, Z, param);
-model = train(prob, param, datapath, datapath_t, d, a, b);
+model = train(prob, param, datapath, datapath_t, d, a, b, lr);
 
 function param = parameter(y, Z, config_file, options)
 

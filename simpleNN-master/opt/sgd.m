@@ -1,4 +1,4 @@
-function model = sgd(prob, param, model, net, datapath, datapath_t, d, a, b)
+function model = sgd(prob, param, model, net, datapath, datapath_t, d, a, b, lr)
 
 lr = param.lr;
 batch_size = param.bsize;
@@ -28,15 +28,16 @@ mean_tr = mean(Z);
 Z = Z - mean_tr;
 %---------------------------------------
 
-Dtimes=char(datetime('now','TimeZone','local','Format','HH:mm:ss Z'));
-disp([' Starting Time ' Dtimes] );
+epochs = [];
+accuracies = [];
+times = [];
+unix_time = num2str(posixtime(datetime('now')) * 1e6);
 
+start_tic = tic;
 for k = 1 : param.epoch_max
-
-    disp([' Starting Epoch ' num2str(k)] );
+    epoch_tic = tic;
     
-    tic;
-    a = 0 ;
+    %a = 0;
 	for j = 1 : ceil(prob.l/batch_size)
         %dt = datestr(now,'HH:MM:SS.FFF;');
         %disp(['First Loop dt ' dt] );
@@ -61,13 +62,30 @@ for k = 1 : param.epoch_max
         %a=a+e;
 	end
 	%fprintf('%d-epoch avg. loss: %g\n', k, loss/batch_size);
-    matplot(k)=loss/batch_size;
+    %matplot(k)=loss/batch_size;
     %disp(matplot)
-    toc;
+    %toc;
+    
     model.param = param;
-    [predicted_label, acc] = cnn_predict(y, Z, model);
-    %fprintf('Seed Number: %g\n', seed);
-    fprintf('test_acc: %5.5f\n',acc);
+    if mod(k,5) == 0 || k==1
+        [predicted_label, acc] = cnn_predict(y, Z, model);
+        fprintf('test_acc: %5.5f\n',acc);
+        accuracies = [accuracies acc];
+
+        epochs = [epochs k];
+
+        total_elapsed_toc = toc(start_tic);
+        times = [times total_elapsed_toc];        
+        
+        l_rate = num2str(lr);
+        result_name = strcat('results/results_sgd_',extractAfter(datapath,5),'_',l_rate,'_',unix_time,'.mat');
+        save(result_name,'epochs','accuracies','times');
+    end    
+    
+    disp("This epoch:");
+    toc(epoch_tic);
+    disp("Total:");
+    toc(start_tic);
 end
 
 Dtimes=char(datetime('now','TimeZone','local','Format','d-MMM-y HH:mm:ss Z'));

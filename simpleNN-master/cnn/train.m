@@ -1,13 +1,13 @@
-function model = train(prob, param, datapath, datapath_t, d, a, b)
+function model = train(prob, param, datapath, datapath_t, d, a, b, lr)
 
 model = init_model(param);
 net = init_net(param, model);
 
 switch param.solver
 	case 1
-		model = newton(prob, param, model, net, datapath, datapath_t, d, a, b);
+		model = newton(prob, param, model, net, datapath, datapath_t, d, a, b, lr);
 	case 2
-		model = sgd(prob, param, model, net, datapath, datapath_t, d, a, b);
+		model = sgd(prob, param, model, net, datapath, datapath_t, d, a, b, lr);
 	case 3
 		model = adam(prob, param, model, net);
 otherwise

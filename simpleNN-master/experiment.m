@@ -1,4 +1,4 @@
-function experiment(config_file, datapath, datapath_t, d, a, b, options, seed)
+function experiment(config_file, datapath, datapath_t, d, a, b, options, seed, lr)
 
 if nargin == 6
     options = '';
@@ -25,7 +25,7 @@ Z = (Z - tmp_min) ./ (tmp_max - tmp_min);
 mean_tr = mean(Z);
 Z = Z - mean_tr;
 
-model = cnn_train(y, Z, config_file, options, seed, datapath, datapath_t, d, a, b);
+model = cnn_train(y, Z, config_file, options, seed, datapath, datapath_t, d, a, b, lr);
 
 %% Test
 % -----

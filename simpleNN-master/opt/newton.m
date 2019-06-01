@@ -1,4 +1,4 @@
-function model = newton(prob, param, model, net, datapath, datapath_t, d, a, b)
+function model = newton(prob, param, model, net, datapath, datapath_t, d, a, b, lr)
 
 % Assign each instance to a batch
 batch_idx = assign_inst_idx(param, prob.l);
@@ -65,9 +65,9 @@ for k = 1 : param.iter_max
     
     model.param = param;    
     
-    if mod(k,10) == 0
+    if mod(k,10) == 0 || k==1
         [predicted_label, acc] = cnn_predict(y, Z, model);
-        fprintf('test_acc: %g\n',acc);
+        fprintf('test_acc: %5.5f\n',acc);
         accuracies = [accuracies acc];
 
         epochs = [epochs k];
@@ -75,7 +75,8 @@ for k = 1 : param.iter_max
         total_elapsed_toc = toc(start_tic);
         times = [times total_elapsed_toc];        
         
-        result_name = strcat('results/results_newton_cifar_0.1_',unix_time,'.mat');
+        l_rate = num2str(lr);
+        result_name = strcat('results/results_newton_',extractAfter(datapath,5),'_',l_rate,'_',unix_time,'.mat');
         save(result_name,'epochs','accuracies','times');
     end    
     
