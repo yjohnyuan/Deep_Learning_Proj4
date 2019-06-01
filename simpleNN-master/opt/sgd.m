@@ -62,10 +62,10 @@ for k = 1 : param.epoch_max
     matplot(k)=loss/batch_size;
     %disp(matplot)
     
-    model.param = param;    
+    model.param = param;
     [predicted_label, acc] = cnn_predict(y, Z, model);
     %fprintf('Seed Number: %g\n', seed);
-    fprintf('test_acc: %g\n',acc);
+    fprintf('test_acc: %5.5f\n',acc);
 end
 
 Dtimes=char(datetime('now','TimeZone','local','Format','d-MMM-y HH:mm:ss Z'));

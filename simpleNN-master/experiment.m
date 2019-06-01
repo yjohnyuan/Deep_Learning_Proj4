@@ -47,5 +47,5 @@ Z = Z - mean_tr;
 
 [predicted_label, acc] = cnn_predict(y, Z, model);
 fprintf('Seed Number: %g\n', seed);
-fprintf('test_acc: %g\n',acc);
+fprintf('test_acc: %5.5f\n',acc);
 

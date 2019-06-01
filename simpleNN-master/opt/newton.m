@@ -1,4 +1,4 @@
-function model = newton(prob, param, model, net)
+function model = newton(prob, param, model, net, datapath, datapath_t, d, a, b)
 
 % Assign each instance to a batch
 batch_idx = assign_inst_idx(param, prob.l);
@@ -7,6 +7,24 @@ subsampled_batch = 1;
 [net, f, grad] = fungrad_minibatch(prob, param, model, net, batch_idx, ...
                                    subsampled_batch, 'fungrad');
 
+% Read test data sets-------------------
+load(datapath_t,'y','Z');
+y = y - min(y) + 1;
+Z = [full(Z) zeros(size(Z,1), a*b*d - size(Z,2))];
+
+% Rearrange data from row-wise to col-wise
+Z = reshape(permute(reshape(Z, [],b,a,d), [1,3,2,4]), [], a*b*d);
+
+% Max-min normalization
+tmp_max = max(Z, [], 2);
+tmp_min = min(Z, [], 2);
+Z = (Z - tmp_min) ./ (tmp_max - tmp_min);
+
+% Zero mean
+mean_tr = mean(Z);
+Z = Z - mean_tr;
+%---------------------------------------                               
+                               
 for k = 1 : param.iter_max
 	net = Jacobian(param, model, net);
 	[x, CGiter, gs, sGs] = CG(param, model, net, grad);
@@ -35,6 +53,12 @@ for k = 1 : param.iter_max
 	gnorm = calc_gnorm(grad, param);
 
 	fprintf('%d-iter f: %g |g|: %g alpha: %g ratio: %g lambda: %g #CG: %d actred: %g prered: %g\n', k, f, gnorm, alpha, actred/prered, param.lambda, CGiter, actred, prered);
+    
+    model.param = param;    
+    [predicted_label, acc] = cnn_predict(y, Z, model);
+    %fprintf('Seed Number: %g\n', seed);
+    fprintf('test_acc: %g\n',acc);
+
 end
 
 model.param = param;

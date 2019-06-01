@@ -5,7 +5,7 @@ net = init_net(param, model);
 
 switch param.solver
 	case 1
-		model = newton(prob, param, model, net);
+		model = newton(prob, param, model, net, datapath, datapath_t, d, a, b);
 	case 2
 		model = sgd(prob, param, model, net, datapath, datapath_t, d, a, b);
 	case 3
