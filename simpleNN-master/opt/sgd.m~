@@ -27,15 +27,12 @@ Z = (Z - tmp_min) ./ (tmp_max - tmp_min);
 mean_tr = mean(Z);
 Z = Z - mean_tr;
 %---------------------------------------
-
-Dtimes=char(datetime('now','TimeZone','local','Format','HH:mm:ss Z'));
-disp([' Starting Time ' Dtimes] );
-
+disp([' Starting Epoch ' Dtimes] );
 for k = 1 : param.epoch_max
 
-    disp([' Starting Epoch ' num2str(k)] );
+    Dtimes=char(datetime('now','TimeZone','local','Format','HH:mm:ss Z'));
     
-    tic;
+    tic
     a = 0 ;
 	for j = 1 : ceil(prob.l/batch_size)
         %dt = datestr(now,'HH:MM:SS.FFF;');
@@ -60,10 +57,10 @@ for k = 1 : param.epoch_max
         %e=etime(t1,t2);
         %a=a+e;
 	end
-	%fprintf('%d-epoch avg. loss: %g\n', k, loss/batch_size);
+	fprintf('%d-epoch avg. loss: %g\n', k, loss/batch_size);
     matplot(k)=loss/batch_size;
     %disp(matplot)
-    toc;
+    to
     model.param = param;
     [predicted_label, acc] = cnn_predict(y, Z, model);
     %fprintf('Seed Number: %g\n', seed);
