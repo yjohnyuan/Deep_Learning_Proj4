@@ -86,7 +86,7 @@ if param.LC == 0
 end
 
 
-param.full_neurons = [4]; % lol #hardcode
+param.full_neurons = [4]; % lol #dangerous hardcode
 param.nL = param.full_neurons(param.LF);
 
 
