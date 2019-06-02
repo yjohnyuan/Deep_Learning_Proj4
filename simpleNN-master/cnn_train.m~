@@ -85,10 +85,8 @@ if param.LC == 0
 	error('You must have at least one convolutional layer.');
 end
 
-
-param.full_neurons = [4]; % lol #hardcode
 param.nL = param.full_neurons(param.LF);
-
+disp(param.LF);
 
 function param = parse_options(param, options)
 
