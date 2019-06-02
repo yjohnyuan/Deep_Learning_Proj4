@@ -65,7 +65,7 @@ for k = 1 : param.iter_max
     
     model.param = param;    
     
-    if mod(k,10) == 0 || k==1
+    if mod(k,5) == 0 || k==1
         [predicted_label, acc] = cnn_predict(y, Z, model);
         fprintf('test_acc: %5.5f\n',acc);
         accuracies = [accuracies acc];
