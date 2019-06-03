@@ -1,36 +1,36 @@
 CIFAR10- Commands SGD
 LR= 0.1
-experiment('cifar10-layer3.config', 'data/cifar10-5000.mat', 'data/cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 1 -C 0.01 -lr 0.1 -decay 0 -bsize 128 -momentum 0.9',10, 0.1)
+experiment('cifar10-layer3.config', 'data/cifar10-train.mat', 'data/cifar10-test.mat', 3, 32, 32,'-s 2 -epoch_max 500 -C 0.01 -lr 0.1 -decay 0 -bsize 128 -momentum 0.9',10, 0.1);
 
 CIFAR10- Commands  SGD
 LR= 0.01
-experiment('cifar10-layer3.config', 'data/cifar10-5000.mat', 'data/cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 1 -C 0.01 -lr 0.01 -decay 0 -bsize 128 -momentum 0.9',10, 0.01)
+experiment('cifar10-layer3.config', 'data/cifar10-train.mat', 'data/cifar10-test.mat', 3, 32, 32,'-s 2 -epoch_max 500 -C 0.01 -lr 0.01 -decay 0 -bsize 128 -momentum 0.9',10, 0.01);
 
 CIFAR10- Commands  SGD 
-LR= 0.001
-experiment('cifar10-layer3.config', 'data/cifar10-5000.mat', 'data/cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10, 0.001)
+LR= 0.001s
+experiment('cifar10-layer3.config', 'data/cifar10-train.mat', 'data/cifar10-test.mat', 3, 32, 32,'-s 2 -epoch_max 500 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10, 0.001);
 
 CIFAR10- Commands  SGD 
 LR= 0.0001
-experiment('cifar10-layer3.config', 'data/cifar10-5000.mat', 'data/cifar10.t.mat', 3, 32, 32,'-s 2 -epoch_max 1 -C 0.01 -lr 0.0001 -decay 0 -bsize 128 -momentum 0.9',10, 0.0001)
+experiment('cifar10-layer3.config', 'data/cifar10-train.mat', 'data/cifar10-test.mat', 3, 32, 32,'-s 2 -epoch_max 500 -C 0.01 -lr 0.0001 -decay 0 -bsize 128 -momentum 0.9',10, 0.0001);
 
 
 
 MNIST Commands  SGD
 LR= 0.1
-experiment('mnist-layer3.config', 'data/mnist-5000.mat', 'data/mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10, 0.1)
+experiment('mnist-layer3.config', 'data/mnist-train.mat', 'data/mnist-test.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.1 -decay 0 -bsize 128 -momentum 0.9',10, 0.1);
 
 MNIST Commands  SGD
 LR= 0.01
-experiment('mnist-layer3.config', 'data/mnist-5000.mat', 'data/mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10, 0.01)
+experiment('mnist-layer3.config', 'data/mnist-train.mat', 'data/mnist-test.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.01 -decay 0 -bsize 128 -momentum 0.9',10, 0.01);
 
 MNIST Commands  SGD
 LR= 0.001
-experiment('mnist-layer3.config', 'data/mnist-5000.mat', 'data/mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10, 0.001)
+experiment('mnist-layer3.config', 'data/mnist-train.mat', 'data/mnist-test.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10, 0.001);
 
 MNIST Commands  SGD
 LR= 0.0001
-experiment('mnist-layer3.config', 'data/mnist-5000.mat', 'data/mnist.t.mat', 1, 28, 28,'-s 2 -epoch_max 1 -C 0.01 -lr 0.001 -decay 0 -bsize 128 -momentum 0.9',10, 0.0001)
+experiment('mnist-layer3.config', 'data/mnist-train.mat', 'data/mnist-test.mat', 1, 28, 28,'-s 2 -epoch_max 500 -C 0.01 -lr 0.0001 -decay 0 -bsize 128 -momentum 0.9',10, 0.0001);
 
 
 -------
@@ -44,41 +44,40 @@ experiment('mnist-layer3.config', 'data/mnist-5000.mat', 'data/mnist.t.mat', 1, 
 
 CIFAR10- Commands Newton
 LR= 0.1
-experiment('cifar10-layer3.config', 'data/cifar10-5000.mat', 'data/cifar10.t.mat', 3, 32, 32,'-s 1 -SR 0.20 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 1 -drop 2/3 -boost 3/2 -eta 0.0001',10, 0.1)
+experiment('cifar10-layer3.config', 'data/cifar10-train.mat', 'data/cifar10-test.mat', 3, 32, 32,'-s 1 -SR 0.2 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 1 -drop 2/3 -boost 3/2 -eta 0.0001',10, 21);
 
 
 CIFAR10- Commands  Newton
 LR= 0.01
-experiment('cifar10-layer3.config', 'data/cifar10-5000.mat', 'data/cifar10.t.mat', 3, 32, 32,'-s 1 -SR 0.50 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 1 -drop 2/3 -boost 3/2 -eta 0.0001',10, 0.01)
+experiment('cifar10-layer3.config', 'data/cifar10-train.mat', 'data/cifar10-test.mat', 3, 32, 32,'-s 1 -SR 0.5 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 1 -drop 2/3 -boost 3/2 -eta 0.0001',10, 51);
 
 
 CIFAR10- Commands  Newton 
 LR= 0.001
-experiment('cifar10-layer3.config', 'data/cifar10-5000.mat', 'data/cifar10.t.mat', 3, 32, 32,'-s 1 -SR 0.20 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 0 -drop 2/3 -boost 3/2 -eta 0.0001',10, 0.001)
-
+experiment('cifar10-layer3.config', 'data/cifar10-train.mat', 'data/cifar10-test.mat', 3, 32, 32,'-s 1 -SR 0.2 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 0 -drop 2/3 -boost 3/2 -eta 0.0001',10, 20);
 
 
 CIFAR10- Commands  Newton
 LR= 0.0001
-experiment('cifar10-layer3.config', 'data/cifar10-5000.mat', 'data/cifar10.t.mat', 3, 32, 32,'-s 1 -SR 0.50 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 0 -drop 2/3 -boost 3/2 -eta 0.0001',10, 0.0001)
+experiment('cifar10-layer3.config', 'data/cifar10-train.mat', 'data/cifar10-test.mat', 3, 32, 32,'-s 1 -SR 0.5 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 0 -drop 2/3 -boost 3/2 -eta 0.0001',10, 50);
 
 
 
 MNIST Commands  Newton
 LR= 0.1
-experiment('mnist-layer3.config', 'data/mnist-5000.mat', 'data/mnist.t.mat', 1, 28, 28,'-s 1 -SR 0.20 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 1 -drop 2/3 -boost 3/2 -eta 0.0001',10, 0.1)
+experiment('mnist-layer3.config', 'data/mnist-train.mat', 'data/mnist-test.mat', 1, 28, 28,'-s 1 -SR 0.2 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 1 -drop 2/3 -boost 3/2 -eta 0.0001',10, 21);
 
 MNIST Commands  Newton
 LR= 0.01
-experiment('mnist-layer3.config', 'data/mnist-5000.mat', 'data/mnist.t.mat', 1, 28, 28,'-s 1 -SR 0.50 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 1 -drop 2/3 -boost 3/2 -eta 0.0001',10)
+experiment('mnist-layer3.config', 'data/mnist-train.mat', 'data/mnist-test.mat', 1, 28, 28,'-s 1 -SR 0.5 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 1 -drop 2/3 -boost 3/2 -eta 0.0001',10, 51);
 
 MNIST Commands  Newton
 LR= 0.001
-experiment('mnist-layer3.config', 'data/mnist-5000.mat', 'data/mnist.t.mat', 1, 28, 28,'-s 1 -SR 0.20 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 0 -drop 2/3 -boost 3/2 -eta 0.0001',10)
+experiment('mnist-layer3.config', 'data/mnist-train.mat', 'data/mnist-test.mat', 1, 28, 28,'-s 1 -SR 0.2 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 0 -drop 2/3 -boost 3/2 -eta 0.0001',10, 20);
 
 MNIST Commands  Newton
 LR= 0.0001
-experiment('mnist-layer3.config', 'data/mnist-5000.mat', 'data/mnist.t.mat', 1, 28, 28,'-s 1 -SR 0.50 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 0 -drop 2/3 -boost 3/2 -eta 0.0001',10)
+experiment('mnist-layer3.config', 'data/mnist-train.mat', 'data/mnist-test.mat', 1, 28, 28,'-s 1 -SR 0.5 -iter_max 1 -C 0.01 -xi 0.1 -CGmax 250 -lambda 0 -drop 2/3 -boost 3/2 -eta 0.0001',10, 50);
 
 
 
